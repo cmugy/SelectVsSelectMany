@@ -14,6 +14,37 @@ namespace SelectVsSelectMany
 
             var type = tup.GetType();
             Console.WriteLine(type);
+
+            var people = new List<Person>
+            {
+                new Person
+                {
+                    Id = 1,
+                    Age = 23,
+                    Name = "Collins"
+                },
+                new Person
+                {
+                    Id = 2,
+                    Name = "Mugarura",
+                    Age = 25,
+                },
+                new Person
+                {
+                    Id = 3,
+                    Name = "Barx",
+                    Age = 25
+                },
+                
+                new Person
+                {
+                    Id = 2,
+                    Name = "Test",
+                    Age=0
+                }
+            };
+
+            var test = people.ToDictionary(x => x.Id, p => p);
                 
                 
             var testDictionary = new Dictionary<string, IDictionary<string, Person>>
