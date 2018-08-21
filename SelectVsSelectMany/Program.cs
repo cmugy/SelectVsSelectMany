@@ -43,8 +43,27 @@ namespace SelectVsSelectMany
                     Age=0
                 }
             };
+            
+            var dictionary= new Dictionary<int, Person>();
 
-            var test = people.ToDictionary(x => x.Id, p => p);
+            foreach (var person in people)
+            {
+                if (dictionary.ContainsKey(person.Id))
+                {
+                    dictionary.Add(person.Id +5, person);
+                    //continue;
+                }
+                else
+                {
+                    dictionary.Add(person.Id, person);
+                }
+                
+                
+            }
+
+            dictionary.Keys.ToList().ForEach(Console.WriteLine);
+
+            //var test = people.ToDictionary(x => x.Id, p => p);
                 
                 
             var testDictionary = new Dictionary<string, IDictionary<string, Person>>
