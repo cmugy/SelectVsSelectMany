@@ -9,5 +9,7 @@ namespace SelectVsSelectMany
         public int Age { get; set; }
 
         public IEnumerable<string> Pets { get; set; }
+
+        public int Id { get; set; }
     }
 }
